@@ -9,6 +9,7 @@
             "homepage": "https://github.com/piotrbienias"
         }
     ],
+    "type": "wordpress-plugin",
     "require": {
         "firebase/php-jwt": "^5.0"
     },
