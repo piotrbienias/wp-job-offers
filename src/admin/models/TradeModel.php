@@ -3,7 +3,7 @@
 namespace JobOffers\Admin\Models;
 
 
-class JO_TradeModel {
+class TradeModel {
 
     private $id = null;
     private $name;

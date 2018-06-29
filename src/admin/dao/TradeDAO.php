@@ -2,12 +2,12 @@
 
 namespace JobOffers\Admin\DAO;
 
-use JobOffers\Admin\Helpers\JO_DAO;
-use JobOffers\Admin\Models\JO_TradeModel;
+use JobOffers\Admin\Helpers\DAO;
+use JobOffers\Admin\Models\TradeModel;
 
 
 
-class JO_TradeDAO extends JO_DAO {
+class TradeDAO extends DAO {
 
     function __construct() {
         parent::__construct( 'trades' );
@@ -22,7 +22,7 @@ class JO_TradeDAO extends JO_DAO {
         $trades = [];
 
         foreach( $trades_db as $trade ) {
-            array_push( $trades, new JO_TradeModel( $trade ) );
+            array_push( $trades, new TradeModel( $trade ) );
         }
 
         return $trades;
@@ -34,7 +34,7 @@ class JO_TradeDAO extends JO_DAO {
             ARRAY_A
         );
 
-        return new JO_TradeModel( $trade_db );
+        return new TradeModel( $trade_db );
     }
 
 }

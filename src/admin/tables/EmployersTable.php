@@ -2,16 +2,16 @@
 
 namespace JobOffers\Admin\Tables;
 
-use JobOffers\Admin\DAO\JO_EmployerDAO;
+use JobOffers\Admin\DAO\EmployerDAO;
 
 
 
-class JO_EmployersTable extends \WP_List_Table {
+class EmployersTable extends \WP_List_Table {
 
     function __construct() {
         parent::__construct();
 
-        $this->employer_dao = new JO_EmployerDAO();
+        $this->employer_dao = new EmployerDAO();
     }
 
     public function get_columns() {
@@ -47,7 +47,7 @@ class JO_EmployersTable extends \WP_List_Table {
     }
 
     public function fetch_table_data() {
-        $employer_dao = new JO_EmployerDAO();
+        $employer_dao = new EmployerDAO();
         return $employer_dao->getEmployers();
     }
 

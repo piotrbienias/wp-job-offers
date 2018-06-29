@@ -2,10 +2,10 @@
 
 namespace JobOffers\Admin\Forms;
 
-use JobOffers\Admin\DAO\JO_EmployerDAO;
+use JobOffers\Admin\DAO\EmployerDAO;
 
 
-class JO_EmployerForm {
+class EmployerForm {
 
     function __construct( $employer = null) {
         $this->employer = $employer;
@@ -101,12 +101,12 @@ class JO_EmployerForm {
     }
 
     public static function handle_update( $id, $data ) {
-        $employer_dao = new JO_EmployerDAO();
+        $employer_dao = new EmployerDAO();
         return $employer_dao->updateEmployer( $id, $data );
     }
 
     public static function handle_create( $data ) {
-        $employer_dao = new JO_EmployerDAO();
+        $employer_dao = new EmployerDAO();
         return $employer_dao->createEmployer( $data );
     }
 

@@ -2,7 +2,7 @@
 
 namespace JobOffers\Admin\Pages;
 
-use JobOffers\Admin\Tables\JO_EmployersTable;
+use JobOffers\Admin\Tables\EmployersTable;
 
 
 class EmployersPage implements PageInterface {
@@ -27,8 +27,8 @@ class EmployersPage implements PageInterface {
     }
 
     public function get_page_content() {
-        $jo_employers_table = new JO_EmployersTable();
-        $jo_employers_table->prepare_items();
+        $employers_table = new EmployersTable();
+        $employers_table->prepare_items();
 
         $add_new_url = admin_url( 'admin.php?page=employer' );
 
@@ -39,7 +39,7 @@ class EmployersPage implements PageInterface {
             <a href="<?php echo $add_new_url; ?>" class="page-title-action"><?php _e('Add new', 'job-offers'); ?></a>
             <div id="poststuff">
                 <form id="jo-employers" method="get">					
-                    <?php $jo_employers_table->display(); ?>					
+                    <?php $employers_table->display(); ?>					
                 </form>
             </div>
         </div>

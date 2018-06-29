@@ -2,12 +2,12 @@
 
 namespace JobOffers\Admin\DAO;
 
-use JobOffers\Admin\Helpers\JO_DAO;
-use JobOffers\Admin\Models\JO_JobOfferModel;
+use JobOffers\Admin\Helpers\DAO;
+use JobOffers\Admin\Models\JobOfferModel;
 
 
 
-class JO_JobOfferDAO extends JO_DAO {
+class JobOfferDAO extends DAO {
 
     function __construct() {
         parent::__construct('job_offers');
@@ -22,7 +22,7 @@ class JO_JobOfferDAO extends JO_DAO {
             );
         }
 
-        return new JO_JobOfferModel( $data );
+        return new JobOfferModel( $data );
     }
 
     public function getJobOffers() {
@@ -34,7 +34,7 @@ class JO_JobOfferDAO extends JO_DAO {
         $job_offers = [];
 
         foreach( $job_offers_db as $job_offer ) {
-            array_push( $job_offers, new JO_JobOfferModel( $job_offer ) );
+            array_push( $job_offers, new JobOfferModel( $job_offer ) );
         }
 
         return $job_offers;

@@ -2,7 +2,7 @@
 
 namespace JobOffers\Admin\Pages;
 
-use JobOffers\Admin\Tables\JO_JobOffersTable;
+use JobOffers\Admin\Tables\JobOffersTable;
 
 
 class JobOffersPage implements PageInterface {
@@ -23,7 +23,7 @@ class JobOffersPage implements PageInterface {
     }
 
     public function get_page_content() {
-        $job_offers_table = new JO_JobOffersTable();
+        $job_offers_table = new JobOffersTable();
         $job_offers_table->prepare_items();
 
         $add_new_url = admin_url( 'admin.php?page=job-offer' );

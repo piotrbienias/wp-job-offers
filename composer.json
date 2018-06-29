@@ -1,4 +1,14 @@
 {
+    "name": "piotrbienias/wp-job-offers",
+    "description": "WordPress plugin to manage job offers, employers and employees",
+    "homepage": "https://github.com/piotrbienias/wp-job-offers",
+    "authors": [
+        {
+            "name": "Piotr Bienias",
+            "email": "piotr.bienias@icloud.com",
+            "homepage": "https://github.com/piotrbienias"
+        }
+    ],
     "require": {
         "firebase/php-jwt": "^5.0"
     },

@@ -2,10 +2,10 @@
 
 namespace JobOffers\Admin\Tables;
 
-use JobOffers\Admin\DAO\JO_JobOfferDAO;
+use JobOffers\Admin\DAO\JobOfferDAO;
 
 
-class JO_JobOffersTable extends \WP_List_Table {
+class JobOffersTable extends \WP_List_Table {
 
     public function prepare_items() {
         $this->_column_headers = array( $this->get_columns() );
@@ -25,7 +25,7 @@ class JO_JobOffersTable extends \WP_List_Table {
     }
 
     private function fetch_data() {
-        $job_offer_dao = new JO_JobOfferDAO();
+        $job_offer_dao = new JobOfferDAO();
         return $job_offer_dao->getJobOffers();
     }
 

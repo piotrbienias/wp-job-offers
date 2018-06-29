@@ -3,7 +3,7 @@
 namespace JobOffers\Admin\Pages;
 
 use JobOffers\Admin\Forms;
-use JobOffers\Admin\DAO\JO_EmployerDAO;
+use JobOffers\Admin\DAO\EmployerDAO;
 
 
 class EmployerPage implements PageInterface {
@@ -11,8 +11,8 @@ class EmployerPage implements PageInterface {
     function __construct() {
         add_action( 'admin_menu', array( $this, 'load_page' ) );
 
-        $this->employer_form = new Forms\JO_EmployerForm();
-        $this->employer_password_form = new Forms\JO_EmployerPasswordForm();
+        $this->employer_form = new Forms\EmployerForm();
+        $this->employer_password_form = new Forms\EmployerPasswordForm();
     }
 
     public function load_page() {
@@ -32,7 +32,7 @@ class EmployerPage implements PageInterface {
 
     public function get_page_content() {
         $employer_id = isset( $_GET['id'] ) ? $_GET['id'] : null;
-        $employer_dao = new JO_EmployerDAO();
+        $employer_dao = new EmployerDAO();
 
         $employer = $employer_dao->getEmployer( $employer_id );
 

@@ -5,7 +5,7 @@ namespace JobOffers\Admin\Models;
 use JobOffers\Admin\DAO;
 
 
-class JO_JobOfferModel {
+class JobOfferModel {
 
     private $id = null;
 
@@ -33,12 +33,12 @@ class JO_JobOfferModel {
     }
 
     public function getEmployer() {
-        $employer_dao = new DAO\JO_EmployerDAO();
+        $employer_dao = new DAO\EmployerDAO();
         return $employer_dao->getEmployer( $this->get('employer_id') );
     }
 
     public function getTrade() {
-        $trade_dao = new DAO\JO_TradeDAO();
+        $trade_dao = new DAO\TradeDAO();
         return $trade_dao->getTrade( $this->get('trade_id') );
     }
 

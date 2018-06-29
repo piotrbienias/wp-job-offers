@@ -2,7 +2,7 @@
 
 namespace JobOffers\Admin\Pages;
 
-use JobOffers\Admin\DAO\JO_JobOfferDAO;
+use JobOffers\Admin\DAO\JobOfferDAO;
 use JobOffers\Admin\Forms\JobOfferForm;
 
 
@@ -33,7 +33,7 @@ class JobOfferPage extends BasePage implements PageInterface  {
     public function get_page_content() {
         $job_offer_id = isset( $_GET['id'] ) ? $_GET['id'] : null;
 
-        $job_offer_dao = new JO_JobOfferDAO();
+        $job_offer_dao = new JobOfferDAO();
         $job_offer = $job_offer_dao->getJobOffer( $job_offer_id );
 
         $this->job_offer_form->set_job_offer( $job_offer );

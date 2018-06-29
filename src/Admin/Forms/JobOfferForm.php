@@ -2,9 +2,9 @@
 
 namespace JobOffers\Admin\Forms;
 
-use JobOffers\Admin\DAO\JO_EmployerDAO;
-use JobOffers\Admin\DAO\JO_TradeDAO;
-use JobOffers\Admin\DAO\JO_JobOfferDAO;
+use JobOffers\Admin\DAO\EmployerDAO;
+use JobOffers\Admin\DAO\TradeDAO;
+use JobOffers\Admin\DAO\JobOfferDAO;
 
 
 class JobOfferForm {
@@ -19,12 +19,12 @@ class JobOfferForm {
     }
 
     private function get_employers() {
-        $employer_dao = new JO_EmployerDAO();
+        $employer_dao = new EmployerDAO();
         $this->employers = $employer_dao->getEmployers();
     }
 
     private function get_trades() {
-        $trade_dao = new JO_TradeDAO();
+        $trade_dao = new TradeDAO();
         $this->trades = $trade_dao->getTrades();
     }
 
@@ -139,12 +139,12 @@ class JobOfferForm {
 
     public static function handle_update( $id, $data ) {
         unset( $data['id'] );
-        $job_offer_dao = new JO_JobOfferDAO();
+        $job_offer_dao = new JobOfferDAO();
         return $job_offer_dao->updateJobOffer( $id, $data );
     }
 
     public static function handle_create( $data ) {
-        $job_offer_dao = new JO_JobOfferDAO();
+        $job_offer_dao = new JobOfferDAO();
         return $job_offer_dao->createJobOffer( $data );
     }
 

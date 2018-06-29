@@ -2,10 +2,10 @@
 
 namespace JobOffers\Admin\Forms;
 
-use JobOffers\Admin\DAO\JO_EmployerDAO;
+use JobOffers\Admin\DAO\EmployerDAO;
 
 
-class JO_EmployerPasswordForm {
+class EmployerPasswordForm {
 
     function __construct( $employer = null ) {
         $this->employer = $employer;
@@ -74,7 +74,7 @@ class JO_EmployerPasswordForm {
         
         if ( isset( $_POST['nonce'] ) && isset( $_POST['password'] ) && wp_verify_nonce( $_POST['nonce'], 'employer_change_password' ) ) {
 
-            $employer_dao = new JO_EmployerDAO();
+            $employer_dao = new EmployerDAO();
 
             $result = $employer_dao->changePassword( $_POST['id'], $_POST['password'] );
 

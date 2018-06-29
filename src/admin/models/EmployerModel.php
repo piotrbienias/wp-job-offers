@@ -3,7 +3,7 @@
 namespace JobOffers\Admin\Models;
 
 
-class JO_EmployerModel {
+class EmployerModel {
 
     private $id = null;
 

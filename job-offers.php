@@ -20,8 +20,10 @@ define( 'JOB_OFFERS_MAIN_FILE_PATH', __FILE__ );
 require_once( 'vendor/autoload.php' );
 
 
+// load plugin textdomain and create options pages
 function load_job_offers_textdomain() {
     load_plugin_textdomain( 'job-offers', FALSE, basename( dirname(__FILE__) ) . '/languages/' );
+    new MainPage();
 }
 add_action( 'plugins_loaded', 'load_job_offers_textdomain' );
 
@@ -33,10 +35,3 @@ require_once( 'src/general/hooks/activate.php' );
 // This deactivation hook should be moved to uninstall.php
 // because we are deleting database tables in it
 require_once( 'src/general/hooks/deactivate.php' );
-
-
-// plugin options page
-function job_offers_options_page() {
-    new MainPage();
-}
-add_action( 'plugins_loaded', 'job_offers_options_page' );

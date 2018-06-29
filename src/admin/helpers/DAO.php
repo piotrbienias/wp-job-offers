@@ -3,7 +3,7 @@
 namespace JobOffers\Admin\Helpers;
 
 
-class JO_DAO {
+class DAO {
 
     function __construct( $table_name ) {
         global $wpdb;
