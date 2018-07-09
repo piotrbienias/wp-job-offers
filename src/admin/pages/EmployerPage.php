@@ -4,6 +4,7 @@ namespace JobOffers\Admin\Pages;
 
 use JobOffers\Admin\Forms;
 use JobOffers\Admin\DAO\EmployerDAO;
+use JobOffers\Admin\Tables\EmployerJobOffersTable;
 
 
 class EmployerPage implements PageInterface {
@@ -46,6 +47,12 @@ class EmployerPage implements PageInterface {
         $page_title = $employer->get('id') ? __('Update employer', 'job-offers') : __('Create employer', 'job-offers');
 
         $back_url = admin_url( 'admin.php?page=employers' );
+        $add_job_offer_url = admin_url( 'admin.php?page=job-offer&employer_id=' . $employer->get('id') );
+        $job_offers_count = $employer_dao->countJobOffers( $employer_id );
+
+        $this->employer_job_offers_table = new EmployerJobOffersTable();
+        $this->employer_job_offers_table->set_employer_id( $employer->get('id') );
+        $this->employer_job_offers_table->prepare_items();
 
         $this->employer_form->setEmployer( $employer );
         $this->employer_password_form->setEmployer( $employer );
@@ -67,16 +74,30 @@ class EmployerPage implements PageInterface {
 
                     <?php if ( $employer_id ): ?>
                         <li class="nav-item">
+                            <a class="nav-link" id="job-offers-tab" data-toggle="tab" href="#job-offers" role="tab" aria-controls="job-offers" aria-selected="false"><?php _e('Job offers', 'job-offers'); ?> (<?php echo $job_offers_count; ?>)</a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if ( $employer_id ): ?>
+                        <li class="nav-item">
                             <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false"><?php _e('Password', 'job-offers'); ?></a>
                         </li>
                     <?php endif; ?>
 
                 </ul>
+                
 
                 <div class="tab-content" id="employer-tabs-content">
 
                     <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labeledby="form-tab">
                         <?php $this->employer_form->html(); ?>
+                    </div>
+
+                    <div class="tab-pane" id="job-offers" role="tabpanel" aria-labeledby="job-offers-tab">
+                        <div style="margin-top: 30px;">
+                            <a href="<?php echo $add_job_offer_url; ?>" class="page-title-action"><?php _e('Add new job offer', 'job-offers'); ?></a>
+                        </div>
+                        <?php $this->employer_job_offers_table->display(); ?>
                     </div>
 
                     <div class="tab-pane" id="password" role="tabpanel" aria-labeledby="password-tab">

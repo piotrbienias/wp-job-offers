@@ -24,7 +24,7 @@ class JobOffersTable extends \WP_List_Table {
         return $columns;
     }
 
-    private function fetch_data() {
+    public function fetch_data() {
         $job_offer_dao = new JobOfferDAO();
         return $job_offer_dao->getJobOffers();
     }
@@ -40,9 +40,13 @@ class JobOffersTable extends \WP_List_Table {
                 $url = admin_url( 'admin.php?page=job-offer&id=' . $item->get('id') );
                 return '<a class="row-title" href="' . $url . '">' . $item->get('title') . '</a>';
             case 'trade':
-                return $item->getTrade()->get('name');
+                $trade = $item->getTrade();
+                $html = '<a href="' . admin_url( "admin.php?page=trade&id={$trade->get('id')}" ) . '">' . $trade->get('name') . '<a>';
+                return $html;
             case 'employer':
-                return $item->getEmployer()->get('company_name');
+                $employer = $item->getEmployer();
+                $html = '<a href="' . admin_url( "admin.php?page=employer&id={$employer->get('id')}" ) . '">' . $employer->get('company_name') . '</a>';
+                return $html;
             default:
                 return $item->get( $column_name );
         }

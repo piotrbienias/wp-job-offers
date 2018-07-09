@@ -4,6 +4,7 @@ namespace JobOffers\Admin\DAO;
 
 use JobOffers\Admin\Helpers\DAO;
 use JobOffers\Admin\Models\EmployerModel;
+use JobOffers\Admin\Models\JobOfferModel;
 
 
 
@@ -37,6 +38,37 @@ class EmployerDAO extends DAO {
         }
 
         return $employers;
+    }
+
+    public function getJobOffers( $id ) {
+        $job_offers_db = [];
+
+        if ( $id ) {
+            $job_offers_db = $this->wpdb->get_results(
+                "SELECT * FROM {$this->wpdb->prefix}job_offers
+                 WHERE employer_id = $id",
+                 ARRAY_A
+            );
+        }
+
+        $job_offers = array();
+        foreach( $job_offers_db as $job_offer ) {
+            array_push( $job_offers, new JobOfferModel($job_offer) );
+        }
+
+        return $job_offers;
+    }
+
+    public function countJobOffers( $id ) {
+        $job_offers_count = null;
+        if ( $id ) {
+            $job_offers_count = $this->wpdb->get_var(
+                "SELECT COUNT(id) FROM {$this->wpdb->prefix}job_offers
+                WHERE employer_id = $id"
+            );
+        }
+
+        return $job_offers_count;
     }
 
     public function updateEmployer( $id, $data ) {

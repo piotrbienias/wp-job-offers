@@ -15,7 +15,8 @@ class TradeDAO extends DAO {
 
     public function getTrades() {
         $trades_db = $this->wpdb->get_results(
-            "SELECT * FROM $this->table_name",
+            "SELECT * FROM $this->table_name
+             ORDER BY id ASC",
             ARRAY_A
         );
 
@@ -29,12 +30,42 @@ class TradeDAO extends DAO {
     }
 
     public function getTrade( $trade_id ) {
-        $trade_db = $this->wpdb->get_row(
-            "SELECT * FROM $this->table_name WHERE id = $trade_id",
-            ARRAY_A
+        $data = [];
+
+        if ( $trade_id ) {
+            $data = $this->wpdb->get_row(
+                "SELECT * FROM $this->table_name WHERE id = $trade_id",
+                ARRAY_A
+            );
+        }
+
+        return new TradeModel( $data );
+    }
+
+    public function updateTrade( $id, $data ) {
+        unset( $data['id'] );
+        
+        return $this->wpdb->update(
+            $this->table_name,
+            $data,
+            array( 'id' => $id )
+        );
+    }
+
+    public function createTrade( $data ) {
+        return $this->wpdb->insert(
+            $this->table_name,
+            $data
+        );
+    }
+
+    public function getJobOffersCount( $trade_id ) {
+        $job_offers_count = $this->wpdb->get_var(
+            "SELECT COUNT(id) FROM {$this->wpdb->prefix}job_offers
+             WHERE trade_id = $trade_id"
         );
 
-        return new TradeModel( $trade_db );
+        return $job_offers_count;
     }
 
 }

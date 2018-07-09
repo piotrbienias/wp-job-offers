@@ -11,8 +11,12 @@ class MainPage implements PageInterface {
 
         $this->job_offers_page = new JobOffersPage();
         $this->job_offer_page = new JobOfferPage();
+
         $this->employers_page = new EmployersPage();
         $this->employer_page = new EmployerPage();
+
+        $this->trades_page = new TradesPage();
+        $this->trade_page = new TradePage();
     }
 
     public function load_page() {
@@ -28,12 +32,15 @@ class MainPage implements PageInterface {
         $slugs = [
             $this->page_slug,
             $this->job_offers_page->get_page_slug(),
+            $this->job_offer_page->get_page_slug(),
             $this->employers_page->get_page_slug(),
             $this->employer_page->get_page_slug(),
-            $this->job_offer_page->get_page_slug()
+            $this->trades_page->get_page_slug(),
+            $this->trade_page->get_page_slug()
         ];
 
         if ( in_array( $hook, $slugs ) ){
+            wp_enqueue_style( 'admin-general-css', plugins_url( 'wp-job-offers/src/admin/static/css/general.css', 'wp-job-offers.php' ) );
             wp_enqueue_style( 'admin-bootstrap-css', plugins_url( 'wp-job-offers/src/admin/static/bootstrap/bootstrap.min.css', 'wp-job-offers.php' ) );
 
             wp_enqueue_script( 'admin-bootstrap-js', plugins_url( 'wp-job-offers/src/admin/static/bootstrap/bootstrap.min.js', 'wp-job-offers.php' ), array( 'jquery' ) );

@@ -9,25 +9,43 @@ use JobOffers\Admin\DAO\JobOfferDAO;
 
 class JobOfferForm {
 
+    /**
+     * In the constructor we define the form action used in AJAX call
+     * As well as we create a nonce field for validation purposes.
+     */
     function __construct() {
         $this->form_action = 'save_job_offer';
         $this->form_nonce = wp_create_nonce( $this->form_action );
     }
 
+    /**
+     * Sets current job offer used to print the form's HTML
+     */
     public function set_job_offer( $job_offer ) {
         $this->job_offer = $job_offer;
     }
 
+    /**
+     * Returns list of all employers.
+     */
     private function get_employers() {
         $employer_dao = new EmployerDAO();
         $this->employers = $employer_dao->getEmployers();
     }
 
+    /**
+     * Returns list of all trades.
+     */
     private function get_trades() {
         $trade_dao = new TradeDAO();
         $this->trades = $trade_dao->getTrades();
     }
 
+    /**
+     * Print select field with list of employers.
+     * If we are editing existing job offer, given employer is automatically selected
+     * If we add new job offer and $_GET['employer_id] is set, we select this employer
+     */
     private function get_employers_select_html() {
         $this->get_employers();
 
@@ -36,7 +54,14 @@ class JobOfferForm {
 
         foreach( $this->employers as $employer ) {
             $text = 'ID: ' . $employer->get('id') . ' - ' . $employer->get('company_name');
-            $selected = $employer->get('id') == $current_employer ? 'selected="selected"' : '';
+
+            $selected = '';
+            if ( $employer->get('id') == $current_employer ) {
+                $selected = 'selected="selected"';
+            } elseif ( isset($_GET['employer_id']) ? ($_GET['employer_id'] == $employer->get('id') && !isset($current_employer)) : false ) {
+                $selected = 'selected="selected"';
+            }
+
             $html .= '<option '.$selected.' value="'.$employer->get('id').'">'.$text.'</option>';
         }
 
@@ -45,6 +70,9 @@ class JobOfferForm {
         return $html;
     }
 
+    /**
+     * Print select field with list of available trades.
+     */
     private function get_trades_select_html() {
         $this->get_trades();
 
@@ -60,6 +88,9 @@ class JobOfferForm {
         return $html;
     }
 
+    /**
+     * Print HTML code for Job Offer Form
+     */
     public function html() {
         $action_url = esc_url( admin_url( 'admin-post.php' ) );
         ?>
@@ -137,12 +168,23 @@ class JobOfferForm {
         <?php
     }
 
+    /**
+     * Used in AJAX call for updating job offer
+     * 
+     * @param $id ID of job offer to be updated
+     * @param $data Array of data to be used when updating job offer
+     */
     public static function handle_update( $id, $data ) {
         unset( $data['id'] );
         $job_offer_dao = new JobOfferDAO();
         return $job_offer_dao->updateJobOffer( $id, $data );
     }
 
+    /**
+     * Used in AJAX call for adding new job offer
+     * 
+     * @param $data Array of data to be used when creating new job offer
+     */
     public static function handle_create( $data ) {
         $job_offer_dao = new JobOfferDAO();
         return $job_offer_dao->createJobOffer( $data );
