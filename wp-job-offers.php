@@ -12,12 +12,11 @@ Text Domain: job-offers
 Domain Path: /languages
 */
 
+require_once( 'vendor/autoload.php' );
+
 use JobOffers\Admin\Pages\MainPage;
 
-
 define( 'JOB_OFFERS_MAIN_FILE_PATH', __FILE__ );
-
-require_once( 'vendor/autoload.php' );
 
 
 // load plugin textdomain and create options pages

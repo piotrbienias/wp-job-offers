@@ -25,7 +25,7 @@ class EmployerPasswordForm {
     }
 
     public function load_form_scripts( $hook ) {
-        $form_js_url = plugins_url( 'job-offers/src/Admin/static/js/employer-password-form.js', 'job-offers.php' );
+        $form_js_url = plugins_url( 'wp-job-offers/src/admin/static/js/employer-password-form.js', 'wp-job-offers.php' );
 
         wp_register_script( 'employer-password-form-js', $form_js_url, array( 'jquery' ) );
 

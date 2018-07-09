@@ -50,8 +50,8 @@ class JobOfferPage extends BasePage implements PageInterface  {
 
     public function load_scripts( $hook ) {
         if ( $hook == $this->page_slug ) {
-            $plugins_url_js = plugins_url( 'job-offers/src/Admin/static/js/job-offer-page.js', 'job-offers.php' );
-            $plugins_url_css = plugins_url( 'job-offers/src/Admin/static/css/job-offer-page.css', 'job-offers.php' );
+            $plugins_url_js = plugins_url( 'wp-job-offers/src/admin/static/js/job-offer-page.js', 'wp-job-offers.php' );
+            $plugins_url_css = plugins_url( 'wp-job-offers/src/admin/static/css/job-offer-page.css', 'wp-job-offers.php' );
 
             $job_offer_params = array(
                 'ajax_url'  => esc_url( admin_url( 'admin-ajax.php' ) )

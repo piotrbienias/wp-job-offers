@@ -10,7 +10,6 @@ jQuery(document).ready(function($) {
             data: ajaxData,
             type: 'POST'
         }).done(function(response) {
-            console.log(response);
             var selector = response === '1' ? 'success' : 'danger';
             $('#job-offer-form-' + selector).css('display', 'block');
         }).fail(function(error) {

@@ -34,14 +34,9 @@ class MainPage implements PageInterface {
         ];
 
         if ( in_array( $hook, $slugs ) ){
-            $params = array( 'ajax_url' => admin_url( 'admin-ajax.php' ) );
+            wp_enqueue_style( 'admin-bootstrap-css', plugins_url( 'wp-job-offers/src/admin/static/bootstrap/bootstrap.min.css', 'wp-job-offers.php' ) );
 
-            wp_enqueue_style( 'admin-bootstrap-css', plugins_url( 'job-offers/src/Admin/static/bootstrap.min.css', 'job-offers.php' ) );
-
-            wp_enqueue_script( 'admin-bootstrap-js', plugins_url( 'job-offers/src/Admin/static/bootstrap.min.js', 'job-offers.php' ), array( 'jquery' ) );
-            wp_enqueue_script( 'admin-scripts', plugins_url( 'job-offers/src/Admin/static/js/scripts.js', 'job-offers.php' ), array( 'jquery' ) );
-
-            wp_localize_script( 'admin-scripts', 'employer_form', $params );
+            wp_enqueue_script( 'admin-bootstrap-js', plugins_url( 'wp-job-offers/src/admin/static/bootstrap/bootstrap.min.js', 'wp-job-offers.php' ), array( 'jquery' ) );
         }
     }
 

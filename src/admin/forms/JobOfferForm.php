@@ -61,7 +61,7 @@ class JobOfferForm {
     }
 
     public function html() {
-        $action_url = admin_url( 'admin-ajax.php' );
+        $action_url = esc_url( admin_url( 'admin-post.php' ) );
         ?>
 
         <div id="job-offer-form-danger" class="alert alert-danger alert-dismissable fade show" role="alert">

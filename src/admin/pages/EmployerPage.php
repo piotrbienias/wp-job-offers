@@ -10,6 +10,7 @@ class EmployerPage implements PageInterface {
 
     function __construct() {
         add_action( 'admin_menu', array( $this, 'load_page' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ) );
 
         $this->employer_form = new Forms\EmployerForm();
         $this->employer_password_form = new Forms\EmployerPasswordForm();
@@ -27,7 +28,13 @@ class EmployerPage implements PageInterface {
     }
 
     public function load_scripts( $hook ) {
-
+        $script_path = plugins_url( 'wp-job-offers/src/admin/static/js/employer-form.js', 'wp-job-offers.php' );
+        wp_enqueue_script( 'employer-form-script', $script_path, array( 'jquery' ) );
+        
+        $employer_form_data = array(
+            'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) )
+        );
+        wp_localize_script( 'employer-form-script', 'employer_form', $employer_form_data );
     }
 
     public function get_page_content() {

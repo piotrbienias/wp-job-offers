@@ -22,164 +22,164 @@ msgstr ""
 "X-Generator: Poedit 2.0.8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: src/Admin/Forms/JO_EmployerForm.php:36
-#: src/Admin/Tables/JO_EmployersTable.php:20
+#: src/admin/Forms/JO_EmployerForm.php:36
+#: src/admin/Tables/JO_EmployersTable.php:20
 msgid "Company name"
 msgstr "Nazwa firmy"
 
-#: src/Admin/Forms/JO_EmployerForm.php:43
+#: src/admin/Forms/JO_EmployerForm.php:43
 msgid "Street"
 msgstr "Ulica"
 
-#: src/Admin/Forms/JO_EmployerForm.php:50
+#: src/admin/Forms/JO_EmployerForm.php:50
 msgid "Street number"
 msgstr "Numer ulicy"
 
-#: src/Admin/Forms/JO_EmployerForm.php:57
+#: src/admin/Forms/JO_EmployerForm.php:57
 msgid "Postal code"
 msgstr "Kod pocztowy"
 
-#: src/Admin/Forms/JO_EmployerForm.php:64
-#: src/Admin/Tables/JO_EmployersTable.php:21
+#: src/admin/Forms/JO_EmployerForm.php:64
+#: src/admin/Tables/JO_EmployersTable.php:21
 msgid "City"
 msgstr "Miasto"
 
-#: src/Admin/Forms/JO_EmployerForm.php:71
-#: src/Admin/Tables/JO_EmployersTable.php:22
+#: src/admin/Forms/JO_EmployerForm.php:71
+#: src/admin/Tables/JO_EmployersTable.php:22
 msgid "E-mail"
 msgstr "E-mail"
 
-#: src/Admin/Forms/JO_EmployerForm.php:78
-#: src/Admin/Tables/JO_EmployersTable.php:23
+#: src/admin/Forms/JO_EmployerForm.php:78
+#: src/admin/Tables/JO_EmployersTable.php:23
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/Admin/Forms/JO_EmployerForm.php:85
-#: src/Admin/Tables/JO_EmployersTable.php:24
+#: src/admin/Forms/JO_EmployerForm.php:85
+#: src/admin/Tables/JO_EmployersTable.php:24
 msgid "Is verified?"
 msgstr "Zweryfikowany?"
 
-#: src/Admin/Forms/JO_EmployerForm.php:92
-#: src/Admin/Tables/JO_EmployersTable.php:25
+#: src/admin/Forms/JO_EmployerForm.php:92
+#: src/admin/Tables/JO_EmployersTable.php:25
 msgid "Is deleted?"
 msgstr "Usunięty?"
 
-#: src/Admin/Forms/JO_EmployerForm.php:98 src/Admin/Forms/JobOfferForm.php:135
+#: src/admin/Forms/JO_EmployerForm.php:98 src/admin/Forms/JobOfferForm.php:135
 msgid "Save changes"
 msgstr "Zapisz zmiany"
 
-#: src/Admin/Forms/JO_EmployerPasswordForm.php:34
+#: src/admin/Forms/JO_EmployerPasswordForm.php:34
 msgid "Password has been changed"
 msgstr "Hasło zostało zmienione"
 
-#: src/Admin/Forms/JO_EmployerPasswordForm.php:49
-#: src/Admin/Pages/EmployerPage.php:63
+#: src/admin/Forms/JO_EmployerPasswordForm.php:49
+#: src/admin/Pages/EmployerPage.php:63
 msgid "Password"
 msgstr "Hasło"
 
-#: src/Admin/Forms/JO_EmployerPasswordForm.php:59
+#: src/admin/Forms/JO_EmployerPasswordForm.php:59
 msgid "Confirm password"
 msgstr "Potwierdzenie hasła"
 
-#: src/Admin/Forms/JO_EmployerPasswordForm.php:68
+#: src/admin/Forms/JO_EmployerPasswordForm.php:68
 msgid "Change password"
 msgstr "Zmień hasło"
 
-#: src/Admin/Forms/JobOfferForm.php:68
+#: src/admin/Forms/JobOfferForm.php:68
 msgid "Error occurred while performing operation"
 msgstr "Wystąpił błąd podczas wykonywania operacji"
 
-#: src/Admin/Forms/JobOfferForm.php:74
+#: src/admin/Forms/JobOfferForm.php:74
 msgid "Job offer has been saved"
 msgstr "Oferta pracy została zapisana"
 
-#: src/Admin/Forms/JobOfferForm.php:87
-#: src/Admin/Tables/JO_JobOffersTable.php:18
+#: src/admin/Forms/JobOfferForm.php:87
+#: src/admin/Tables/JO_JobOffersTable.php:18
 msgid "Offer title"
 msgstr "Tytuł oferty"
 
-#: src/Admin/Forms/JobOfferForm.php:94 src/Admin/Pages/EmployerPage.php:21
-#: src/Admin/Pages/EmployerPage.php:22 src/Admin/Pages/EmployerPage.php:58
-#: src/Admin/Tables/JO_JobOffersTable.php:19
+#: src/admin/Forms/JobOfferForm.php:94 src/admin/Pages/EmployerPage.php:21
+#: src/admin/Pages/EmployerPage.php:22 src/admin/Pages/EmployerPage.php:58
+#: src/admin/Tables/JO_JobOffersTable.php:19
 msgid "Employer"
 msgstr "Pracodawca"
 
-#: src/Admin/Forms/JobOfferForm.php:101
-#: src/Admin/Tables/JO_JobOffersTable.php:20
+#: src/admin/Forms/JobOfferForm.php:101
+#: src/admin/Tables/JO_JobOffersTable.php:20
 msgid "Trade"
 msgstr "Branża"
 
-#: src/Admin/Forms/JobOfferForm.php:108
+#: src/admin/Forms/JobOfferForm.php:108
 msgid "Price range"
 msgstr "Wynagrodzenie"
 
-#: src/Admin/Forms/JobOfferForm.php:115
+#: src/admin/Forms/JobOfferForm.php:115
 msgid "Job description"
 msgstr "Opis stanowiska"
 
-#: src/Admin/Forms/JobOfferForm.php:122
+#: src/admin/Forms/JobOfferForm.php:122
 msgid "Requirements"
 msgstr "Wymagania"
 
-#: src/Admin/Forms/JobOfferForm.php:129
+#: src/admin/Forms/JobOfferForm.php:129
 msgid "What we offer"
 msgstr "Co oferujemy"
 
-#: src/Admin/Pages/EmployerPage.php:39
+#: src/admin/Pages/EmployerPage.php:39
 msgid "Update employer"
 msgstr "Aktualizuj pracodawcę"
 
-#: src/Admin/Pages/EmployerPage.php:39
+#: src/admin/Pages/EmployerPage.php:39
 msgid "Create employer"
 msgstr "Dodaj pracodawcę"
 
-#: src/Admin/Pages/EmployerPage.php:50
+#: src/admin/Pages/EmployerPage.php:50
 msgid "Selected employer does not exist!"
 msgstr "Wybrany pracodawca nie istnieje!"
 
-#: src/Admin/Pages/EmployerPage.php:50
+#: src/admin/Pages/EmployerPage.php:50
 msgid "Back"
 msgstr "Powrót"
 
-#: src/Admin/Pages/EmployersPage.php:17 src/Admin/Pages/EmployersPage.php:18
-#: src/Admin/Pages/EmployersPage.php:38
+#: src/admin/Pages/EmployersPage.php:17 src/admin/Pages/EmployersPage.php:18
+#: src/admin/Pages/EmployersPage.php:38
 msgid "Employers"
 msgstr "Pracodawcy"
 
-#: src/Admin/Pages/EmployersPage.php:39
+#: src/admin/Pages/EmployersPage.php:39
 msgid "Add new"
 msgstr "Dodaj nowego"
 
-#: src/Admin/Pages/JobOfferPage.php:25 src/Admin/Pages/JobOfferPage.php:26
+#: src/admin/Pages/JobOfferPage.php:25 src/admin/Pages/JobOfferPage.php:26
 msgid "Job offer"
 msgstr "Oferta pracy"
 
-#: src/Admin/Pages/JobOfferPage.php:41
+#: src/admin/Pages/JobOfferPage.php:41
 msgid "Update job offer"
 msgstr "Aktualizuj ofertę pracy"
 
-#: src/Admin/Pages/JobOfferPage.php:41
+#: src/admin/Pages/JobOfferPage.php:41
 msgid "Create new job offer"
 msgstr "Dodaj nową ofertę pracy"
 
-#: src/Admin/Pages/JobOffersPage.php:17 src/Admin/Pages/JobOffersPage.php:18
-#: src/Admin/Pages/JobOffersPage.php:33 src/Admin/Pages/MainPage.php:20
-#: src/Admin/Pages/MainPage.php:21
+#: src/admin/Pages/JobOffersPage.php:17 src/admin/Pages/JobOffersPage.php:18
+#: src/admin/Pages/JobOffersPage.php:33 src/admin/Pages/MainPage.php:20
+#: src/admin/Pages/MainPage.php:21
 msgid "Job offers"
 msgstr "Oferty pracy"
 
-#: src/Admin/Pages/JobOffersPage.php:34
+#: src/admin/Pages/JobOffersPage.php:34
 msgid "Add new job offer"
 msgstr "Dodaj nową ofertę pracy"
 
-#: src/Admin/Tables/JO_EmployersTable.php:32
+#: src/admin/Tables/JO_EmployersTable.php:32
 msgid "No employers found"
 msgstr "Nie znaleziono pracodawców"
 
-#: src/Admin/Tables/JO_JobOffersTable.php:21
+#: src/admin/Tables/JO_JobOffersTable.php:21
 msgid "Valid until"
 msgstr "Ważna do"
 
-#: src/Admin/Tables/JO_JobOffersTable.php:33
+#: src/admin/Tables/JO_JobOffersTable.php:33
 msgid "No job offers found"
 msgstr "Nie znaleziono ofert pracy"
