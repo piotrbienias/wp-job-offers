@@ -2,6 +2,8 @@
 
 namespace JobOffers\Admin\Pages;
 
+use JobOffers\Admin\DAO\EmployeeDAO;
+
 
 class MainPage implements PageInterface {
 
@@ -15,8 +17,14 @@ class MainPage implements PageInterface {
         $this->employers_page = new EmployersPage();
         $this->employer_page = new EmployerPage();
 
+        $this->employees_page = new EmployeesPage();
+        $this->employee_page = new EmployeePage();
+
         $this->trades_page = new TradesPage();
         $this->trade_page = new TradePage();
+
+        $employee_dao = new EmployeeDAO();
+        $employee_dao->get_all();
     }
 
     public function load_page() {
@@ -33,8 +41,13 @@ class MainPage implements PageInterface {
             $this->page_slug,
             $this->job_offers_page->get_page_slug(),
             $this->job_offer_page->get_page_slug(),
+
             $this->employers_page->get_page_slug(),
             $this->employer_page->get_page_slug(),
+
+            $this->employees_page->get_page_slug(),
+            $this->employee_page->get_page_slug(),
+
             $this->trades_page->get_page_slug(),
             $this->trade_page->get_page_slug()
         ];

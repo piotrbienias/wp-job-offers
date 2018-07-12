@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank WordPress Pot v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2018-07-09 15:41+0200\n"
+"POT-Creation-Date: 2018-07-11 15:54+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <translations@example.com>\n"
@@ -42,11 +42,13 @@ msgstr "Kod pocztowy"
 msgid "City"
 msgstr "Miasto"
 
-#: src/admin/forms/EmployerForm.php:71 src/admin/tables/EmployersTable.php:22
+#: src/admin/forms/EmployerForm.php:71 src/admin/tables/EmployeesTable.php:29
+#: src/admin/tables/EmployersTable.php:22
 msgid "E-mail"
 msgstr "E-mail"
 
-#: src/admin/forms/EmployerForm.php:78 src/admin/tables/EmployersTable.php:23
+#: src/admin/forms/EmployerForm.php:78 src/admin/tables/EmployeesTable.php:30
+#: src/admin/tables/EmployersTable.php:23
 msgid "Phone"
 msgstr "Telefon"
 
@@ -127,6 +129,15 @@ msgstr "Branża została zapisana"
 msgid "Name"
 msgstr "Nazwa"
 
+#: src/admin/pages/EmployeesPage.php:17 src/admin/pages/EmployeesPage.php:18
+#: src/admin/pages/EmployeesPage.php:34
+msgid "Employees"
+msgstr "Pracownicy"
+
+#: src/admin/pages/EmployeesPage.php:35
+msgid "Add new employee"
+msgstr "Dodaj nowego pracownika"
+
 #: src/admin/pages/EmployerPage.php:47
 msgid "Update employer"
 msgstr "Aktualizuj pracodawcę"
@@ -145,7 +156,7 @@ msgstr "Powrót"
 
 #: src/admin/pages/EmployerPage.php:77 src/admin/pages/JobOffersPage.php:17
 #: src/admin/pages/JobOffersPage.php:18 src/admin/pages/JobOffersPage.php:33
-#: src/admin/pages/MainPage.php:24 src/admin/pages/MainPage.php:25
+#: src/admin/pages/MainPage.php:31 src/admin/pages/MainPage.php:32
 msgid "Job offers"
 msgstr "Oferty pracy"
 
@@ -186,6 +197,14 @@ msgstr "Dodaj nową branżę"
 #: src/admin/pages/TradesPage.php:33
 msgid "Trades"
 msgstr "Branże"
+
+#: src/admin/tables/EmployeesTable.php:28
+msgid "First and last name"
+msgstr "Imię i nazwisko"
+
+#: src/admin/tables/EmployeesTable.php:44
+msgid "No employees found"
+msgstr "Nie znaleziono pracowników"
 
 #: src/admin/tables/EmployersTable.php:32
 msgid "No employers found"

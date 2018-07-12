@@ -15,6 +15,7 @@ class JO_Activate {
         JO_Activate::create_employers_table();
         JO_Activate::create_employees_table();
         JO_Activate::create_trades_table();
+        JO_Activate::create_employees_trades_table();
         JO_Activate::create_job_offers_table();
     }
 
@@ -51,6 +52,19 @@ class JO_Activate {
         $charset_collate = $wpdb->get_charset_collate();
 
         $sql = JO_DatabaseTablesSQL::get_trades_table();
+        $sql = str_replace('*table_name*', $table_name, $sql);
+        $sql = str_replace('*charset_collate*', $charset_collate, $sql);
+
+        dbDelta( $sql );
+    }
+
+    private static function create_employees_trades_table() {
+        global $wpdb;
+
+        $table_name = $wpdb->prefix . 'employees_trades';
+        $charset_collate = $wpdb->get_charset_collate();
+
+        $sql = JO_DatabaseTablesSQL::get_employees_trades_table();
         $sql = str_replace('*table_name*', $table_name, $sql);
         $sql = str_replace('*charset_collate*', $charset_collate, $sql);
 
